@@ -1,6 +1,5 @@
 import styles from '../styles/Home.module.css';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
-
 import BlogCard from '../components/BlogCard';
 
 export default function Home({ launches }) {
