@@ -5,7 +5,7 @@ import BlogCard from '../components/BlogCard';
 export default function Home({ launches }) {
   console.log(launches)
 
-  const blogCards = launches.map(post => <BlogCard key={post.node.id} title={post.node.title} />)
+  const blogCards = launches.map(post => <BlogCard key={post.node.id} title={post.node.title} excerpt={post.node.excerpt} />)
   return (
     <div className={styles.container}>
       { blogCards }
@@ -26,8 +26,13 @@ export async function getStaticProps(){
         posts {
           edges {
             node {
-              id
+              slug
               title
+              excerpt
+              postId
+              featuredImageId
+              date
+              authorId
             }
           }
         }
